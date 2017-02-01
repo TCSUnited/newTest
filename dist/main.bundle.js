@@ -788,7 +788,8 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client__["connect"]('http://localhost:3000');
+        // var socket = io.connect('http://localhost:3000');
+        var socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client__["connect"]('http://iontracking2.azurewebsites.net');
         socket.on('notifyChanges', function (data) {
             document.getElementById('notify').innerHTML = data.msg;
         });
@@ -797,8 +798,8 @@ var AppComponent = (function () {
             console.log('inside fetch data successfully if exists');
             AppComponent.mydata = doc;
             AppComponent.displayOnUI(AppComponent.mydata);
-            _this.database.sync("http://localhost:4984/ion-tracking");
-            //this.database.sync("http://54.200.235.10:4984/ion-tracking");
+            //    this.database.sync("http://localhost:4984/ion-tracking");
+            _this.database.sync("http://54.200.235.10:4984/ion-tracking");
             _this.database.getChangeListener().subscribe(function (data) {
                 var _loop_1 = function(i) {
                     _this.zone.run(function () {
@@ -815,8 +816,8 @@ var AppComponent = (function () {
         }, function (err) {
             if (err.status == "404") {
                 console.log('inside error 404');
-                _this.database.sync("http://localhost:4984/ion-tracking");
-                //this.database.sync("http://54.200.235.10:4984/ion-tracking");
+                //   this.database.sync("http://localhost:4984/ion-tracking");
+                _this.database.sync("http://54.200.235.10:4984/ion-tracking");
                 _this.database.getChangeListener().subscribe(function (data) {
                     var _loop_2 = function(i) {
                         _this.zone.run(function () {
