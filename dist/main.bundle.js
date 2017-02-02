@@ -743,8 +743,8 @@ var AppComponent = (function () {
         };
         this.listener = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_20" /* EventEmitter */]();
         console.log('Service created', _service);
-        this.socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client__["connect"]('http://localhost:3000');
-        // var socket = io.connect('http://iontracking2.azurewebsites.net');
+        //this.socket = io.connect('http://localhost:3000');
+        var socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client__["connect"]('http://iontracking2.azurewebsites.net');
         this.socket.on('notifyChanges', function (data) {
             console.log('hi');
             _service.success("Notification ", "Flight Moved");
