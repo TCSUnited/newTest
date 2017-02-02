@@ -1,21 +1,21 @@
 webpackJsonp([0,3],{
 
-/***/ 1032:
+/***/ 1047:
 /***/ function(module, exports) {
 
 /* (ignored) */
 
 /***/ },
 
-/***/ 1033:
+/***/ 1048:
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(450);
+module.exports = __webpack_require__(457);
 
 
 /***/ },
 
-/***/ 245:
+/***/ 246:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var PouchDB = __webpack_require__(745);
+var PouchDB = __webpack_require__(758);
 var PouchDBService = (function () {
     function PouchDBService() {
         this.listener = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_20" /* EventEmitter */]();
@@ -99,11 +99,15 @@ var PouchDBService = (function () {
 
 /***/ },
 
-/***/ 365:
+/***/ 371:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(419);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_notifications__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return MainviewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -115,32 +119,62 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var MainviewComponent = (function () {
-    function MainviewComponent() {
+    function MainviewComponent(_service) {
+        this._service = _service;
+        this.title = 'Main View!';
+        this.options = {
+            timeOut: 2800,
+            clickToClose: true,
+            maxLength: 0,
+            maxStack: 7,
+            showProgressBar: true,
+            pauseOnHover: true,
+            animate: 'fromRight',
+            position: ['top', 'right']
+        };
+        console.log('Service created', _service);
     }
+    MainviewComponent.prototype.onCreate = function (event) {
+        console.log(event);
+    };
+    MainviewComponent.prototype.onDestroy = function (event) {
+        console.log(event);
+    };
+    MainviewComponent.prototype.onButtonClick = function () {
+        this._service.success("Saved ", "New Item created");
+    };
+    MainviewComponent.prototype.onAnotherClick = function () {
+        this._service.error("Error ", "Could not load data!");
+        //this._service.info("Error ", "Try again")
+    };
     MainviewComponent.prototype.ngOnInit = function () {
+        __WEBPACK_IMPORTED_MODULE_1_jquery__('#test').html('Hello How are you');
     };
     MainviewComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-mainview',
-            template: __webpack_require__(752),
-            styles: [__webpack_require__(746)]
+            template: __webpack_require__(766),
+            styles: [__webpack_require__(759)]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__["NotificationsService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__["NotificationsService"]) === 'function' && _a) || Object])
     ], MainviewComponent);
     return MainviewComponent;
+    var _a;
 }());
 //# sourceMappingURL=C:/Users/United TCS/Desktop/Praveen/CEAN/angularDemo/Test/src/mainview.component.js.map
 
 /***/ },
 
-/***/ 366:
+/***/ 372:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(416);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(423);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return GridViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -169,8 +203,8 @@ var GridViewComponent = (function () {
     GridViewComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-grid-view',
-            template: __webpack_require__(754),
-            styles: [__webpack_require__(748)]
+            template: __webpack_require__(769),
+            styles: [__webpack_require__(762)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === 'function' && _a) || Object])
     ], GridViewComponent);
@@ -181,13 +215,13 @@ var GridViewComponent = (function () {
 
 /***/ },
 
-/***/ 367:
+/***/ 373:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_pouchdb_config__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_pouchdb_config__ = __webpack_require__(246);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NetworkViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -574,8 +608,8 @@ var NetworkViewComponent = (function () {
     NetworkViewComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-network-view',
-            template: __webpack_require__(756),
-            styles: [__webpack_require__(750)]
+            template: __webpack_require__(771),
+            styles: [__webpack_require__(764)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_pouchdb_config__["a" /* PouchDBService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_pouchdb_config__["a" /* PouchDBService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* NgZone */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === 'function' && _c) || Object])
     ], NetworkViewComponent);
@@ -586,7 +620,7 @@ var NetworkViewComponent = (function () {
 
 /***/ },
 
-/***/ 368:
+/***/ 374:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -610,8 +644,8 @@ var StationViewComponent = (function () {
     StationViewComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-station-view',
-            template: __webpack_require__(757),
-            styles: [__webpack_require__(751)]
+            template: __webpack_require__(772),
+            styles: [__webpack_require__(765)]
         }), 
         __metadata('design:paramtypes', [])
     ], StationViewComponent);
@@ -621,7 +655,7 @@ var StationViewComponent = (function () {
 
 /***/ },
 
-/***/ 449:
+/***/ 456:
 /***/ function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -630,21 +664,21 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 449;
+webpackEmptyContext.id = 456;
 
 
 /***/ },
 
-/***/ 450:
+/***/ 457:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(572);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(585);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__polyfills_ts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(537);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(544);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(571);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(584);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(580);
 
 
 
@@ -658,17 +692,21 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ },
 
-/***/ 567:
+/***/ 579:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(416);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(423);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pouchdb_config__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_socket_io_client__ = __webpack_require__(1023);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pouchdb_config__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_socket_io_client__ = __webpack_require__(1038);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_socket_io_client__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(419);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_notifications__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_notifications__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -684,13 +722,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AppComponent = (function () {
-    function AppComponent(http, database, zone) {
+    function AppComponent(http, _service, database, zone) {
         this.http = http;
+        this._service = _service;
         this.database = database;
         this.zone = zone;
+        this.open = false;
+        this.options2 = {
+            timeOut: 2800,
+            clickToClose: true,
+            maxLength: 0,
+            maxStack: 7,
+            showProgressBar: false,
+            pauseOnHover: true,
+            animate: 'fromRight',
+            position: ['top', 'right']
+        };
         this.listener = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_20" /* EventEmitter */]();
+        console.log('Service created', _service);
+        this.socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client__["connect"]('http://localhost:3000');
+        // var socket = io.connect('http://iontracking2.azurewebsites.net');
+        this.socket.on('notifyChanges', function (data) {
+            console.log('hi');
+            _service.success("Notification ", "Flight Moved");
+            // document.getElementById('notify').innerHTML=data.msg
+        });
     }
+    AppComponent.prototype.onCreate = function (event) {
+        console.log(event);
+    };
+    AppComponent.prototype.onDestroy = function (event) {
+        console.log(event);
+    };
     AppComponent.prettyConfirm = function (title, text, callback) {
         swal({
             title: title,
@@ -702,7 +768,6 @@ var AppComponent = (function () {
     };
     AppComponent.displayOnUI = function (doc) {
         console.log('inside Print');
-        console.log(doc);
         var options = {
             groupOrder: function (a, b) {
                 return a.value - b.value;
@@ -718,7 +783,6 @@ var AppComponent = (function () {
                     'end: ' + item.end + '?';
                 AppComponent.prettyConfirm('Move item', title, function (ok) {
                     if (ok) {
-                        console.log(item.id);
                         var id = item.id;
                         var myarray_1 = id.split("_");
                         var dummy = AppComponent.mydata;
@@ -726,7 +790,6 @@ var AppComponent = (function () {
                             var aircraft = _a[_i];
                             if (aircraft.nNbr == myarray_1[0]) {
                                 var flightindex = myarray_1[2];
-                                console.log(aircraft.pFls[flightindex]);
                                 aircraft.pFls[flightindex].aGDDt = "" + item.start + "";
                                 aircraft.pFls[flightindex].aGADt = "" + item.end + "";
                                 AppComponent.static_database_ref.put('ionTracking', dummy);
@@ -788,24 +851,19 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        // var socket = io.connect('http://localhost:3000');
-        var socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client__["connect"]('http://iontracking2.azurewebsites.net');
-        socket.on('notifyChanges', function (data) {
-            document.getElementById('notify').innerHTML = data.msg;
-        });
         AppComponent.static_database_ref = this.database;
         this.database.get('ionTracking').then(function (doc) {
             console.log('inside fetch data successfully if exists');
             AppComponent.mydata = doc;
             AppComponent.displayOnUI(AppComponent.mydata);
-            //    this.database.sync("http://localhost:4984/ion-tracking");
+            //  this.database.sync("http://localhost:4984/ion-tracking");
             _this.database.sync("http://54.200.235.10:4984/ion-tracking");
             _this.database.getChangeListener().subscribe(function (data) {
                 var _loop_1 = function(i) {
                     _this.zone.run(function () {
                         AppComponent.mydata = data.change.docs[i];
                         AppComponent.displayOnUI(AppComponent.mydata);
-                        socket.emit('notify');
+                        _this.socket.emit('notify');
                         //document.getElementById('notify').innerHTML='Changes made to Couchbase'
                     });
                 };
@@ -816,7 +874,7 @@ var AppComponent = (function () {
         }, function (err) {
             if (err.status == "404") {
                 console.log('inside error 404');
-                //   this.database.sync("http://localhost:4984/ion-tracking");
+                //    this.database.sync("http://localhost:4984/ion-tracking");
                 _this.database.sync("http://54.200.235.10:4984/ion-tracking");
                 _this.database.getChangeListener().subscribe(function (data) {
                     var _loop_2 = function(i) {
@@ -835,37 +893,52 @@ var AppComponent = (function () {
             }
         });
     };
+    AppComponent.prototype.clickme = function () {
+        if (this.open === false) {
+            __WEBPACK_IMPORTED_MODULE_5_jquery__('#footerSlideContent').animate({ height: '178px' });
+            __WEBPACK_IMPORTED_MODULE_5_jquery__(this).css('backgroundPosition', 'bottom left');
+            this.open = true;
+        }
+        else {
+            __WEBPACK_IMPORTED_MODULE_5_jquery__('#footerSlideContent').animate({ height: '0px' });
+            __WEBPACK_IMPORTED_MODULE_5_jquery__(this).css('backgroundPosition', 'top left');
+            this.open = false;
+        }
+    };
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(753),
-            styles: [__webpack_require__(747)]
+            template: __webpack_require__(767),
+            styles: [__webpack_require__(760)],
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_pouchdb_config__["a" /* PouchDBService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_pouchdb_config__["a" /* PouchDBService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* NgZone */]) === 'function' && _c) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6_angular2_notifications__["NotificationsService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_6_angular2_notifications__["NotificationsService"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_pouchdb_config__["a" /* PouchDBService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_pouchdb_config__["a" /* PouchDBService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* NgZone */]) === 'function' && _d) || Object])
     ], AppComponent);
     return AppComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 //# sourceMappingURL=C:/Users/United TCS/Desktop/Praveen/CEAN/angularDemo/Test/src/app.component.js.map
 
 /***/ },
 
-/***/ 568:
+/***/ 580:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(528);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(567);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__MainView_mainview_component__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__header_header_component__ = __webpack_require__(570);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__network_view_network_view_component__ = __webpack_require__(367);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_routing__ = __webpack_require__(569);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__station_view_station_view_component__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__grid_view_grid_view_component__ = __webpack_require__(366);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_pouchdb_config__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(535);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(579);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__MainView_mainview_component__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__header_header_component__ = __webpack_require__(583);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__network_view_network_view_component__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_routing__ = __webpack_require__(581);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__station_view_station_view_component__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__grid_view_grid_view_component__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_pouchdb_config__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_notifications__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_angular2_notifications__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__footer_footer_component__ = __webpack_require__(582);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -876,6 +949,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -899,13 +974,15 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__network_view_network_view_component__["a" /* NetworkViewComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__station_view_station_view_component__["a" /* StationViewComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__grid_view_grid_view_component__["a" /* GridViewComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__grid_view_grid_view_component__["a" /* GridViewComponent */], __WEBPACK_IMPORTED_MODULE_13__footer_footer_component__["a" /* FooterComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["c" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_8__app_routing__["a" /* routing */]
+                __WEBPACK_IMPORTED_MODULE_8__app_routing__["a" /* routing */],
+                __WEBPACK_IMPORTED_MODULE_12_angular2_notifications__["SimpleNotificationsModule"],
+                __WEBPACK_IMPORTED_MODULE_12_angular2_notifications__["PushNotificationsModule"]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_11__services_pouchdb_config__["a" /* PouchDBService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
@@ -918,15 +995,15 @@ var AppModule = (function () {
 
 /***/ },
 
-/***/ 569:
+/***/ 581:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MainView_mainview_component__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__grid_view_grid_view_component__ = __webpack_require__(366);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__station_view_station_view_component__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__network_view_network_view_component__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(564);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MainView_mainview_component__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__grid_view_grid_view_component__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__station_view_station_view_component__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__network_view_network_view_component__ = __webpack_require__(373);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return routing; });
 
 
@@ -944,7 +1021,43 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule 
 
 /***/ },
 
-/***/ 570:
+/***/ 582:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FooterComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FooterComponent = (function () {
+    function FooterComponent() {
+        this.open = false;
+    }
+    FooterComponent.prototype.ngOnInit = function () {
+    };
+    FooterComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
+            selector: 'app-footer',
+            template: __webpack_require__(768),
+            styles: [__webpack_require__(761)]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], FooterComponent);
+    return FooterComponent;
+}());
+//# sourceMappingURL=C:/Users/United TCS/Desktop/Praveen/CEAN/angularDemo/Test/src/footer.component.js.map
+
+/***/ },
+
+/***/ 583:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -968,8 +1081,8 @@ var HeaderComponent = (function () {
     HeaderComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-header',
-            template: __webpack_require__(755),
-            styles: [__webpack_require__(749)]
+            template: __webpack_require__(770),
+            styles: [__webpack_require__(763)]
         }), 
         __metadata('design:paramtypes', [])
     ], HeaderComponent);
@@ -979,7 +1092,7 @@ var HeaderComponent = (function () {
 
 /***/ },
 
-/***/ 571:
+/***/ 584:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -995,41 +1108,41 @@ var environment = {
 
 /***/ },
 
-/***/ 572:
+/***/ 585:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(592);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(605);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(585);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(598);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(581);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(594);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(587);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(600);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(586);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(599);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(584);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(597);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(583);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(596);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(591);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(604);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(580);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(593);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(579);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(592);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(589);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(602);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(582);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(595);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(590);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(603);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(588);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(601);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(593);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(606);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(1031);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(1046);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
 
 
@@ -1051,89 +1164,103 @@ var environment = {
 
 /***/ },
 
-/***/ 746:
+/***/ 759:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 747:
+/***/ 760:
+/***/ function(module, exports) {
+
+module.exports = "#footerSlideContainer {\r\n\tposition: fixed;\r\n\tbottom:0;\r\n\twidth: 100%;\r\n}\r\n#footerSlideButton {\r\n\tbackground: url(sliderButton.png) top left no-repeat transparent;\r\n\tposition: absolute;\r\n\ttop: -55px;\r\n\tright: 20px;\r\n\twidth:50px;\r\n\theight:50px;\r\n\tborder: none;\r\n\tcursor: pointer;\r\n}\r\n#footerSlideContent {\r\n\twidth: 100%;\r\n\theight: 0px; \r\n\t\r\n\tbackground: #251b15;\r\n\tcolor: #CCCCCC;\r\n\tfont-size: 0.8em;\r\n\tborder: none;\r\n\tfont-family: DejaVuSansBook, Sans-Serif;\r\n}\r\n#footerSlideContent h3 {\r\n\tfont-size: 36px;\r\n\tcolor: #9AC941;\r\n\tmargin: 10px 0 10px 0;\r\n}\r\n#footerSlideContent ul {\r\n\tcolor: #EE8D40;\r\n\tlist-style-type: none;\r\n\tline-height: 2em;\r\n}\r\n#footerSlideText {\r\n\tpadding: 15px 10px 25px 25px;\r\n}\r\n"
+
+/***/ },
+
+/***/ 761:
+/***/ function(module, exports) {
+
+module.exports = "#footerSlideContainer {\r\n\tposition: fixed;\r\n\tbottom:0;\r\n\twidth: 100%;\r\n}\r\n#footerSlideButton {\r\n\tbackground: url(sliderButton.png) top left no-repeat transparent;\r\n\tposition: absolute;\r\n\ttop: -55px;\r\n\tright: 20px;\r\n\twidth:50px;\r\n\theight:50px;\r\n\tborder: none;\r\n\tcursor: pointer;\r\n}\r\n#footerSlideContent {\r\n\twidth: 100%;\r\n\theight: 0px;\r\n\tbackground: #251b15;\r\n\tcolor: #CCCCCC;\r\n\tfont-size: 0.8em;\r\n\tborder: none;\r\n\tfont-family: DejaVuSansBook, Sans-Serif;\r\n}\r\n#footerSlideContent h3 {\r\n\tfont-size: 36px;\r\n\tcolor: #9AC941;\r\n\tmargin: 10px 0 10px 0;\r\n}\r\n#footerSlideContent ul {\r\n\tcolor: #EE8D40;\r\n\tlist-style-type: none;\r\n\tline-height: 2em;\r\n}\r\n#footerSlideText {\r\n\tpadding: 15px 10px 25px 25px;\r\n}"
+
+/***/ },
+
+/***/ 762:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 748:
+/***/ 763:
+/***/ function(module, exports) {
+
+module.exports = ".navbar-inverse{\r\n   background-color:  #04294c;\r\n   color: white   ;\r\n   border-radius: 0px;\r\n\r\n}\r\n\r\n.navbar-inverse a{\r\n    color: white\r\n}"
+
+/***/ },
+
+/***/ 764:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 749:
+/***/ 765:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 750:
+/***/ 766:
 /***/ function(module, exports) {
 
-module.exports = ""
+module.exports = "<simple-notifications \n[options]=\"options\" \n(onCreate)=\"onCreate($event)\"\n(onDestroy)=\"onDestroy($event)\"></simple-notifications>\n<h1>{{title}} </h1>\n<button (click)=\"onButtonClick()\"> Success Notification! </button>\n<button (click)=\"onAnotherClick()\"> Another Notification! </button>\n\n<div id=\"test\"></div>\n"
 
 /***/ },
 
-/***/ 751:
+/***/ 767:
 /***/ function(module, exports) {
 
-module.exports = ""
+module.exports = "<simple-notifications \n[options]=\"options2\" \n(onCreate)=\"onCreate($event)\"\n(onDestroy)=\"onDestroy($event)\"></simple-notifications>\n\n \n<app-header></app-header>\n\n<div class=\"container-fluid\">\n   <router-outlet></router-outlet>\n</div>\n\n<div class=\"container-fluid\">\n   <!-- <div>\n        <label id=\"notify\">Notification</label>\n    </div> -->\n    <div id=\"visualization\"></div>\n</div>\n\n\n\n<div id=\"footerSlideContainer\">\n\t<div id=\"footerSlideButton\" (click)=\"clickme()\">\n        <span class=\"glyphicon glyphicon-chevron-up\" *ngIf=\"!open\"></span>\n        <span class=\"glyphicon glyphicon-chevron-down\" *ngIf=\"open\"></span>\n    </div>\n\t  <div id=\"footerSlideContent\" >\n\t\t <div id=\"footerSlideText\" *ngIf=\"open\">\n\t\t\t\n  <ul class=\"nav nav-pills hidden-xs hidden-sm\">\n  <li role=\"presentation\" ><a href=\"#\">RH Smart D:0()</a></li>\n  <li role=\"presentation\" ><a href=\"#\">Alerts</a></li>\n  <li role=\"presentation\" ><a href=\"#\">Reports </a></li>\n  <li role=\"presentation\" ><a href=\"#\">Uncover </a></li>\n  \n  <li role=\"presentation\" ><a href=\"#\">Add all Noses </a></li>\n \n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Current Time</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Add to Workspace</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Hide Delays</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Build Flights</button></li>\n  <li class=\"hidden-sm\"><span>Fleet:</span>\n      <button class=\"btn btn-default label-default\" style=\"color:white\">76C, 76N, 20S...</button>\n  </li>      \n</ul>\n\n\n<div class=\"container-fluid\">\n            <div class=\"row\"> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-primary col-xs-12\">ORD</button>\n                </div>  \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-warning col-xs-12\">DEN</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\"btn btn-danger col-xs-12\">NYC</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-success col-xs-12\">LAH</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-info col-xs-12\">BAH</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-default col-xs-12\">LAD</button>\n                </div> \n            </div>\n\n            <div class=\"row\" style=\"margin-top:2%\" class=\"hidden-xs hidden-sm\">\n                <div class=\"col-sm-3\">\n                     <span >From</span>\n                     <input type=\"date\" style=\"padding: 3px;border-radius: 8px;\">\n                </div>\n                <div class=\"col-sm-3\">\n                    <span >To</span>\n                    <input type=\"date\" style=\"padding: 3px;border-radius: 8px;\" >\n                </div>\n                <div class=\"col-sm-3\">\n                  <span >Timezone</span>\n                  <input type=\"radio\"  name=\"tmz\">GMT\n                  <input type=\"radio\"  name=\"tmz\">Local\n                </div>\n                <div class=\"col-sm-3\">\n                  <span >SortBy </span>\n                  <input type=\"checkbox\">Arr\n                  <input type=\"checkbox\">Dep\n                </div>\n            </div>                        \n           </div>\n\t   </div>\n\t</div>\n\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ },
 
-/***/ 752:
+/***/ 768:
 /***/ function(module, exports) {
 
-module.exports = "<div>\n    <label id=\"notify\">Notification</label>\n</div>\n\n<div id=\"visualization\"></div>\n"
+module.exports = "<div id=\"footerSlideContainer\">\n\t<div id=\"footerSlideButton\"> Click Me</div>\n\t  <div id=\"footerSlideContent\">\n\t\t <div id=\"footerSlideText\">\n\t\t\t\n  <ul class=\"nav nav-pills hidden-xs hidden-sm\">\n  <li role=\"presentation\" ><a href=\"#\">RH Smart D:0()</a></li>\n  <li role=\"presentation\" ><a href=\"#\">Alerts</a></li>\n  <li role=\"presentation\" ><a href=\"#\">Reports </a></li>\n  <li role=\"presentation\" ><a href=\"#\">Uncover </a></li>\n  \n  <li role=\"presentation\" ><a href=\"#\">Add all Noses </a></li>\n \n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Current Time</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Add to Workspace</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Hide Delays</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Build Flights</button></li>\n  <li class=\"hidden-sm\"><span>Fleet:</span>\n      <button class=\"btn btn-default label-default\" style=\"color:white\">76C, 76N, 20S...</button>\n  </li>      \n</ul>\n\n\n<div class=\"container-fluid\" style=\"    background-color: #dcdcd9;\n    padding-top: 2%;\n    padding-bottom: 2%;\">\n            <div class=\"row\"> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-primary col-xs-12\">ORD</button>\n                </div>  \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-warning col-xs-12\">DEN</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\"btn btn-danger col-xs-12\">NYC</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-success col-xs-12\">LAH</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-info col-xs-12\">BAH</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-default col-xs-12\">LAD</button>\n                </div> \n            </div>\n\n            <div class=\"row\" style=\"margin-top:2%\" class=\"hidden-xs hidden-sm\">\n                <div class=\"col-sm-3\">\n                     <span >From</span>\n                     <input type=\"date\" style=\"padding: 3px;border-radius: 8px;\">\n                </div>\n                <div class=\"col-sm-3\">\n                    <span >To</span>\n                    <input type=\"date\" style=\"padding: 3px;border-radius: 8px;\" >\n                </div>\n                <div class=\"col-sm-3\">\n                  <span >Timezone</span>\n                  <input type=\"radio\"  name=\"tmz\">GMT\n                  <input type=\"radio\"  name=\"tmz\">Local\n                </div>\n                <div class=\"col-sm-3\">\n                  <span >SortBy </span>\n                  <input type=\"checkbox\">Arr\n                  <input type=\"checkbox\">Dep\n                </div>\n            </div>                        \n        </div>\n\n\n\n\n\n\n\t\t</div>\n\t</div>"
 
 /***/ },
 
-/***/ 753:
-/***/ function(module, exports) {
-
-module.exports = "\n \n<app-header></app-header>\n\n<div class=\"container-fluid\">\n   <router-outlet></router-outlet>\n</div>\n\n\n<div class=\"container-fluid\">\n    <div>\n        <label id=\"notify\">Notification</label>\n    </div>\n\n    <div id=\"visualization\"></div>\n</div>\n\n\n\n\n\n\n\n\n\n"
-
-/***/ },
-
-/***/ 754:
+/***/ 769:
 /***/ function(module, exports) {
 
 module.exports = "<table class=\"table\">\n  <thead>\n    <tr>\n      <th>#</th>\n      <th>Name</th>\n      <th>Gender</th>\n      <th>company</th>\n      <th>Email</th>\n      <th>Age</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let person of people;let i=index\">\n      <th scope=\"row\">{{i+1}}</th>\n      <td>{{person.name}}</td>\n      <td>{{person.gender}}</td>\n      <td>{{person.company}}</td>\n      <td>{{person.email}}</td>\n      <td>{{person.age}}</td>\n    </tr>\n    \n  </tbody>\n</table>\n\n"
 
 /***/ },
 
-/***/ 755:
+/***/ 770:
 /***/ function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n     \n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      \n\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\"><strong>ION Tracking </strong></a>\n       <!--<form class=\"navbar-form navbar-right\" role=\"search\">\n                \n                <button type=\"submit\" class=\"btn btn-default btn-sm\">logout</button>\n          </form> -->\n    </div>\n     <form class=\"navbar-form navbar-right hidden-xs hidden-sm\" role=\"search\">\n                \n                <button type=\"submit\" class=\"btn btn-default btn-sm\">logout</button>\n      </form>\n    \n  </div><!-- /.container-fluid -->\n</nav>\n\n<nav class=\"navbar navbar-default\" style=\"margin-top: -21px;\">\n <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav navbar-left\">\n         <li><a routerLink=\"/networkview\">Network View</a></li>\n                <li ><a routerLink=\"/gridview\">Station View</a></li>\n                <li ><a routerLink=\"/stationview\">OM View</a></li>\n                <li ><a routerLink=\"/mainview\">Maint. View</a></li>\n                <li class=\"dropdown\">\n                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">End Assign <span class=\"caret\"></span></a>\n                    <ul class=\"dropdown-menu\">\n                        <li><a href=\"#\">--------</a></li>\n                        <li><a href=\"#\">--------</a></li>\n                        <li><a href=\"#\">--------</a></li>\n                    </ul>\n                </li>\n                \n          </ul>\n          <form class=\"navbar-form navbar-right\" role=\"search\">\n                <div class=\"form-group\">\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n                </div>\n                <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n         \n </div><!-- /.navbar-collapse -->\n   \n</nav>\n\n<ul class=\"nav nav-pills hidden-xs hidden-sm\">\n  <li role=\"presentation\" ><a href=\"#\">RH Smart D:0()</a></li>\n  <li role=\"presentation\" ><a href=\"#\">Alerts</a></li>\n  <li role=\"presentation\" ><a href=\"#\">Reports </a></li>\n  <li role=\"presentation\" ><a href=\"#\">Uncover </a></li>\n  \n  <li role=\"presentation\" ><a href=\"#\">Add all Noses </a></li>\n \n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Current Time</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Add to Workspace</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Hide Delays</button></li>\n  <li><button class=\"btn btn-default label-default\" style=\"color:white\">Build Flights</button></li>\n  <li class=\"hidden-sm\"><span>Fleet:</span>\n      <button class=\"btn btn-default label-default\" style=\"color:white\">76C, 76N, 20S...</button>\n  </li>      \n</ul>\n\n<div class=\"container-fluid\" style=\"    background-color: #dcdcd9;\n    padding-top: 2%;\n    padding-bottom: 2%;\">\n            <div class=\"row\"> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-primary col-xs-12\">ORD</button>\n                </div>  \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-warning col-xs-12\">DEN</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\"btn btn-danger col-xs-12\">NYC</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-success col-xs-12\">LAH</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-info col-xs-12\">BAH</button>\n                </div> \n                <div class=\"col-xs-6 col-md-2\" style=\"margin-top:4px\">\n                    <button class=\" btn btn-default col-xs-12\">LAD</button>\n                </div> \n            </div>\n\n            <div class=\"row\" style=\"margin-top:2%\" class=\"hidden-xs hidden-sm\">\n                <div class=\"col-sm-3\">\n                     <span >From</span>\n                     <input type=\"date\" style=\"padding: 3px;border-radius: 8px;\">\n                </div>\n                <div class=\"col-sm-3\">\n                    <span >To</span>\n                    <input type=\"date\" style=\"padding: 3px;border-radius: 8px;\" >\n                </div>\n                <div class=\"col-sm-3\">\n                  <span >Timezone</span>\n                  <input type=\"radio\"  name=\"tmz\">GMT\n                  <input type=\"radio\"  name=\"tmz\">Local\n                </div>\n                <div class=\"col-sm-3\">\n                  <span >SortBy </span>\n                  <input type=\"checkbox\">Arr\n                  <input type=\"checkbox\">Dep\n                </div>\n            </div>                        \n        </div>\n\n"
+module.exports = "<nav class=\"navbar navbar-inverse navbar-default\">\n  <div class=\"container-fluid\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Ion Tracking</a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav\">  \n       <li><a routerLink=\"/networkview\">Network View</a></li>\n       <li ><a routerLink=\"/gridview\">Station View</a></li>\n       <li ><a routerLink=\"/stationview\">OM View</a></li>\n       <li ><a routerLink=\"/mainview\">Maint. View</a></li>\n       <li class=\"dropdown\">\n           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">End Assign <span class=\"caret\"></span></a>\n           <ul class=\"dropdown-menu\">\n               <li><a href=\"#\">--------</a></li>\n               <li><a href=\"#\">--------</a></li>\n               <li><a href=\"#\">--------</a></li>\n           </ul>\n       </li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right hidden-xs hidden-sm hidden-md\" >\n        <li>\n            <a><span style=\"color:white;font-size: 1.4em;\" class=\"glyphicon glyphicon-off\" aria-hidden=\"true\"></span></a>\n        </li>\n      </ul>\n      <form class=\"navbar-form navbar-right\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n        </div>\n      </form>\n\n      \n    </div><!-- /.navbar-collapse -->\n  </div><!-- /.container-fluid -->\n</nav>\n\n\n\n\n\n\n"
 
 /***/ },
 
-/***/ 756:
+/***/ 771:
 /***/ function(module, exports) {
 
 module.exports = "<!--\n    <div id=\"visualization\"></div>\n\n    -->\n"
 
 /***/ },
 
-/***/ 757:
+/***/ 772:
 /***/ function(module, exports) {
 
 module.exports = "<p>\n  station-view works!\n</p>\n"
 
 /***/ }
 
-},[1033]);
+},[1048]);
 //# sourceMappingURL=main.bundle.map
