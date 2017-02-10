@@ -11,8 +11,12 @@ const server = http.createServer(app);
 server.listen(port, () => console.log(`Application is running on localhost:${port}`));
 var io = require('socket.io')(server);
 
+var sockets =  [];
 io.on('connection', function (socket) {
-  socket.on('notify', function () {
-    socket.emit('notifyChanges', { msg: 'Changes in couchbase' });
-  })
+
+ sockets.push(socket);
+
+socket.on('notify', function(data) {
+         io.sockets.emit('notifyChanges', {newitem:  data})
+    });
 })
